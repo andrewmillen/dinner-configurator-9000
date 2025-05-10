@@ -11,12 +11,12 @@ export default function CategoryCard({
   color,
 }) {
   return (
-    <div className="bg-white dark:bg-black p-6 text-center w-full max-w-sm border border-neutral-700 dark:border-neutral-100">
-      <h2 className="text-sm mb-2 text-neutral-800 dark:text-neutral-500 uppercase tracking-widest">
+    <div className="bg-white dark:bg-black p-4 sm:p-6 text-center w-full max-w-sm border border-neutral-700 dark:border-neutral-100">
+      <h2 className="text-xs sm:text-sm mb-1 sm:mb-2 text-neutral-800 dark:text-neutral-500 uppercase tracking-widest">
         {title}
       </h2>
       <div
-        className={`text-2xl mb-4 ${
+        className={`text-xl sm:text-2xl mb-2 sm:mb-4 ${
           isSpinning || isSpinningCategory ? "text-neutral-400" : color
         }`}
       >

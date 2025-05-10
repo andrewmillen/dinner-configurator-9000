@@ -87,7 +87,7 @@ export default function Home() {
   return (
     <div className="min-h-screen p-8 flex flex-col items-center md:justify-center">
       <main className="w-full max-w-5xl mx-auto">
-        <h1 className="text-3xl lg:text-4xl text-center mb-8 lg:mb-12 text-neutral-700 dark:text-white">
+        <h1 className="text-xl sm:text-3xl lg:text-4xl text-center mb-5 sm:mb-8 lg:mb-12 text-neutral-700 dark:text-white">
           Dinner Configurator 9000
         </h1>
 
@@ -126,7 +126,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="text-center mt-8 lg:mt-12">
+        <div className="text-center mt-5 sm:mt-8 lg:mt-12">
           <button
             onClick={spin}
             disabled={
