@@ -24,7 +24,7 @@ const proteins = [
   "Sausage",
 ];
 
-const starches = ["Potatoes", "Pasta", "Rice", "Grits"];
+const starches = ["Potatoes", "Pasta", "Rice", "Grits", "Bread"];
 
 const cuisines = [
   "American",
