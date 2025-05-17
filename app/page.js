@@ -13,7 +13,7 @@ const proteins = [
   "Chicken Thigh",
   "Chicken Wing",
   "Shrimp",
-  "Salmon",
+  "Fish",
   "Pork Chop",
   "Pork Tenderloin",
   "Ground Pork",
