@@ -24,7 +24,7 @@ const proteins = [
   "Sausage",
 ];
 
-const starches = ["Potatoes", "Pasta", "Rice", "Grits", "Bread"];
+const carbs = ["Potatoes", "Pasta", "Rice", "Grits", "Bread"];
 
 const cuisines = [
   "American",
@@ -43,10 +43,10 @@ const cuisines = [
 export default function Home() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [isSpinningProtein, setIsSpinningProtein] = useState(false);
-  const [isSpinningStarch, setIsSpinningStarch] = useState(false);
+  const [isSpinningCarb, setIsSpinningCarb] = useState(false);
   const [isSpinningCuisine, setIsSpinningCuisine] = useState(false);
   const [selectedProtein, setSelectedProtein] = useState(proteins[0]);
-  const [selectedStarch, setSelectedStarch] = useState(starches[0]);
+  const [selectedCarb, setSelectedCarb] = useState(carbs[0]);
   const [selectedCuisine, setSelectedCuisine] = useState(cuisines[0]);
 
   const getRandomItem = (array) => {
@@ -73,7 +73,7 @@ export default function Home() {
     const maxSpins = 20;
     const interval = setInterval(() => {
       setSelectedProtein(getRandomItem(proteins));
-      setSelectedStarch(getRandomItem(starches));
+      setSelectedCarb(getRandomItem(carbs));
       setSelectedCuisine(getRandomItem(cuisines));
 
       spins++;
@@ -104,13 +104,11 @@ export default function Home() {
           />
 
           <CategoryCard
-            title="Starch"
-            selected={selectedStarch}
+            title="Carb"
+            selected={selectedCarb}
             isSpinning={isSpinning}
-            isSpinningCategory={isSpinningStarch}
-            onSpin={() =>
-              spinSingle(setIsSpinningStarch, setSelectedStarch, starches)
-            }
+            isSpinningCategory={isSpinningCarb}
+            onSpin={() => spinSingle(setIsSpinningCarb, setSelectedCarb, carbs)}
             color="text-sky-600 dark:text-sky-400"
           />
 
@@ -132,13 +130,13 @@ export default function Home() {
             disabled={
               isSpinning ||
               isSpinningProtein ||
-              isSpinningStarch ||
+              isSpinningCarb ||
               isSpinningCuisine
             }
             className={`pl-7 pr-8 py-4 text-lg md:text-xl rounded-full transform inline-flex items-center space-x-3 ${
               isSpinning ||
               isSpinningProtein ||
-              isSpinningStarch ||
+              isSpinningCarb ||
               isSpinningCuisine
                 ? "bg-neutral-100 text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500 cursor-not-allowed"
                 : "bg-neutral-800 text-white dark:bg-white dark:text-neutral-900 hover:cursor-pointer hover:bg-neutral-700 dark:hover:bg-neutral-300"
@@ -159,7 +157,7 @@ export default function Home() {
           <div className="mt-4">
             <button
               onClick={() => {
-                const result = `${selectedCuisine} ${selectedProtein} and ${selectedStarch} recipe`;
+                const result = `${selectedCuisine} ${selectedProtein} and ${selectedCarb} recipe`;
                 window.open(
                   `https://www.google.com/search?q=${encodeURIComponent(
                     result
