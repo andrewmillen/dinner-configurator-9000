@@ -85,13 +85,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen p-8 flex flex-col items-center md:justify-center">
-      <main className="w-full max-w-5xl mx-auto">
-        <h1 className="text-xl sm:text-3xl lg:text-4xl text-center mb-5 sm:mb-8 lg:mb-12 text-neutral-700 dark:text-white">
+    <div className="min-h-svh flex flex-col items-center justify-center">
+      <main className="grid grid-cols-1 gap-12 justify-items-center">
+        <h1 className="text-lg lg:text-xl uppercase tracking-widest text-center text-neutral-700 h-12 flex items-center justify-center">
           Dinner Configurator 9000
         </h1>
 
-        <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           <CategoryCard
             title="Protein"
             selected={selectedProtein}
@@ -100,7 +100,7 @@ export default function Home() {
             onSpin={() =>
               spinSingle(setIsSpinningProtein, setSelectedProtein, proteins)
             }
-            color="text-amber-600 dark:text-amber-500"
+            color="text-cyan-600"
           />
 
           <CategoryCard
@@ -109,7 +109,7 @@ export default function Home() {
             isSpinning={isSpinning}
             isSpinningCategory={isSpinningCarb}
             onSpin={() => spinSingle(setIsSpinningCarb, setSelectedCarb, carbs)}
-            color="text-sky-600 dark:text-sky-400"
+            color="text-lime-600"
           />
 
           <CategoryCard
@@ -120,58 +120,52 @@ export default function Home() {
             onSpin={() =>
               spinSingle(setIsSpinningCuisine, setSelectedCuisine, cuisines)
             }
-            color="text-teal-600 dark:text-teal-400"
+            color="text-amber-600"
           />
         </div>
 
-        <div className="text-center mt-5 sm:mt-8 lg:mt-12">
-          <button
-            onClick={spin}
-            disabled={
-              isSpinning ||
-              isSpinningProtein ||
-              isSpinningCarb ||
-              isSpinningCuisine
-            }
-            className={`pl-7 pr-8 py-4 text-lg md:text-xl rounded-full transform inline-flex items-center space-x-3 ${
-              isSpinning ||
-              isSpinningProtein ||
-              isSpinningCarb ||
-              isSpinningCuisine
-                ? "bg-neutral-100 text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500 cursor-not-allowed"
-                : "bg-neutral-800 text-white dark:bg-white dark:text-neutral-900 hover:cursor-pointer hover:bg-neutral-700 dark:hover:bg-neutral-300"
-            }`}
-          >
-            {isSpinning ? (
-              <>
-                <ArrowPathIcon className="w-5 h-5 inline-block mr-3 animate-spin" />
-                Spin All Categories
-              </>
-            ) : (
-              <>
-                <ArrowPathIcon className="w-5 h-5 inline-block mr-3" />
-                Spin All Categories
-              </>
-            )}
-          </button>
-          <div className="mt-4">
-            <button
-              onClick={() => {
-                const result = `${selectedCuisine} ${selectedProtein} and ${selectedCarb} recipe`;
-                window.open(
-                  `https://www.google.com/search?q=${encodeURIComponent(
-                    result
-                  )}`,
-                  "_blank"
-                );
-              }}
-              className="pl-3 pr-4 py-2 text-sm rounded-full inline-flex items-center bg-neutral-200 dark:bg-neutral-800 dark:text-white hover:bg-neutral-300 dark:hover:bg-neutral-700 hover:cursor-pointer"
-            >
-              <MagnifyingGlassIcon className="w-4 h-4 inline-block mr-2" />
-              Search Result
-            </button>
-          </div>
-        </div>
+        <button
+          onClick={spin}
+          disabled={
+            isSpinning ||
+            isSpinningProtein ||
+            isSpinningCarb ||
+            isSpinningCuisine
+          }
+          className={`h-12 w-72 old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3 ${
+            isSpinning ||
+            isSpinningProtein ||
+            isSpinningCarb ||
+            isSpinningCuisine
+              ? "cursor-not-allowed text-neutral-400"
+              : "cursor-pointer"
+          }`}
+        >
+          {isSpinning ? (
+            <>
+              <ArrowPathIcon className="w-4 h-4 inline-block mr-3 animate-spin" />
+              Spin All Categories
+            </>
+          ) : (
+            <>
+              <ArrowPathIcon className="w-4 h-4 inline-block mr-3" />
+              Spin All Categories
+            </>
+          )}
+        </button>
+        <button
+          onClick={() => {
+            const result = `${selectedCuisine} ${selectedProtein} and ${selectedCarb} recipe`;
+            window.open(
+              `https://www.google.com/search?q=${encodeURIComponent(result)}`,
+              "_blank"
+            );
+          }}
+          className="h-12 w-48 cursor-pointer old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3"
+        >
+          <MagnifyingGlassIcon className="w-4 h-4 inline-block mr-2" />
+          Search Result
+        </button>
       </main>
     </div>
   );

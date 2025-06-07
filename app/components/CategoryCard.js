@@ -11,30 +11,36 @@ export default function CategoryCard({
   color,
 }) {
   return (
-    <div className="bg-white dark:bg-black p-4 sm:p-6 text-center w-full max-w-sm border border-neutral-700 dark:border-neutral-100">
-      <h2 className="text-xs sm:text-sm mb-1 sm:mb-2 text-neutral-800 dark:text-neutral-500 uppercase tracking-widest">
-        {title}
-      </h2>
-      <div
-        className={`text-xl sm:text-2xl mb-2 sm:mb-4 ${
-          isSpinning || isSpinningCategory ? "text-neutral-400" : color
-        }`}
-      >
-        {selected}
+    <button
+      onClick={onSpin}
+      disabled={isSpinning || isSpinningCategory}
+      className={`w-72 h-24 lg:h-48 p-2 pb-0 flex flex-col justify-center items-center old-button pointer-events-all group ${
+        isSpinning || isSpinningCategory
+          ? "cursor-not-allowed"
+          : "cursor-pointer"
+      }`}
+    >
+      <div className="w-full h-full bg-neutral-200 border-1 border-neutral-200 border-l-neutral-400 border-t-neutral-400 outline-1 outline-neutral-600 flex flex-col justify-center items-center pointer-events-none group-active:border-neutral-400 group-active:border-t-neutral-200 group-active:border-l-neutral-200">
+        <h2 className="hidden lg:block text-xs mb-1 sm:mb-2 text-neutral-800 uppercase tracking-widest">
+          {title}
+        </h2>
+        <div
+          className={`text-xl lg:text-2xl tracking-tight ${
+            isSpinning || isSpinningCategory ? "text-neutral-400" : color
+          }`}
+        >
+          {selected}
+        </div>
       </div>
-      <button
-        onClick={onSpin}
-        disabled={isSpinning || isSpinningCategory}
-        className={`p-3 rounded-full transform ${
-          isSpinning || isSpinningCategory
-            ? "bg-neutral-100 text-neutral-400 dark:bg-neutral-900 dark:text-neutral-500 cursor-not-allowed"
-            : "bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-white hover:bg-neutral-300 hover:dark:bg-neutral-700 hover:cursor-pointer"
+      <div
+        className={`py-3 lg:py-4 w-full flex justify-center items-center transform ${
+          isSpinning || isSpinningCategory ? "text-neutral-500" : ""
         }`}
       >
         <ArrowPathIcon
           className={`w-5 h-5 ${isSpinningCategory ? "animate-spin" : ""}`}
         />
-      </button>
-    </div>
+      </div>
+    </button>
   );
 }
