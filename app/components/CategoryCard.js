@@ -21,7 +21,7 @@ export default function CategoryCard({
       }`}
     >
       <div className="w-full h-full bg-neutral-200 border-1 border-neutral-200 border-l-neutral-400 border-t-neutral-400 outline-1 outline-neutral-600 flex flex-col justify-center items-center pointer-events-none group-active:border-neutral-400 group-active:border-t-neutral-200 group-active:border-l-neutral-200">
-        <h2 className="text-xs sm:mb-2 text-neutral-800 uppercase tracking-widest">
+        <h2 className="text-xs lg:mb-2 text-neutral-800 uppercase tracking-widest">
           {title}
         </h2>
         <div
