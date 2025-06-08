@@ -14,14 +14,14 @@ export default function CategoryCard({
     <button
       onClick={onSpin}
       disabled={isSpinning || isSpinningCategory}
-      className={`w-72 h-24 lg:h-48 p-2 pb-0 flex flex-col justify-center items-center old-button pointer-events-all group ${
+      className={`w-64 lg:w-72 h-32 lg:h-48 p-1.5 pb-0 flex flex-col justify-center items-center old-button pointer-events-all group ${
         isSpinning || isSpinningCategory
           ? "cursor-not-allowed"
           : "cursor-pointer"
       }`}
     >
       <div className="w-full h-full bg-neutral-200 border-1 border-neutral-200 border-l-neutral-400 border-t-neutral-400 outline-1 outline-neutral-600 flex flex-col justify-center items-center pointer-events-none group-active:border-neutral-400 group-active:border-t-neutral-200 group-active:border-l-neutral-200">
-        <h2 className="hidden lg:block text-xs mb-1 sm:mb-2 text-neutral-800 uppercase tracking-widest">
+        <h2 className="text-xs sm:mb-2 text-neutral-800 uppercase tracking-widest">
           {title}
         </h2>
         <div

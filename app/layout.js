@@ -15,7 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistMono.variable} font-mono`}>{children}</body>
+      <body
+        className={`${geistMono.variable} font-mono gridlines bg-size-[2rem_2rem] lg:bg-size-[3rem_3rem] text-neutral-900`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

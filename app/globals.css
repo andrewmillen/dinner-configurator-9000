@@ -1,16 +1,11 @@
 @import "tailwindcss";
 
-:root {
-  --background: theme('colors.neutral.200');
-  --gridlines: theme('colors.neutral.400');
-}
-
-body {
-  @apply text-neutral-900;
-  background: var(--background);
-  background-image: linear-gradient(90deg, transparent 23px, var(--gridlines) 24px, transparent 23px), linear-gradient(transparent 23px, var(--gridlines) 24px, transparent 23px);
-  background-size: 3rem 3rem;
-  background-position: center center
+.gridlines {
+  background-color: theme('colors.neutral.200');
+  background-image:
+    linear-gradient(90deg, transparent 49%, #BFBFBF 49%, #BFBFBF 51%, transparent 51%),
+    linear-gradient(transparent 49%, #BFBFBF 49%, #BFBFBF 51%, transparent 51%);
+  background-position: center center;
 }
 
 .old-button {
@@ -27,6 +22,6 @@ body {
     active:border-t-neutral-400
     active:top-0.25
     outline-neutral-500
-    focus:outline-2
-    focus:outline-neutral-900
+    focus-visible:outline-2
+    focus-visible:outline-neutral-900
 }

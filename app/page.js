@@ -86,12 +86,12 @@ export default function Home() {
 
   return (
     <div className="min-h-svh flex flex-col items-center justify-center">
-      <main className="grid grid-cols-1 gap-12 justify-items-center">
-        <h1 className="text-lg lg:text-xl uppercase tracking-widest text-center text-neutral-700 h-12 flex items-center justify-center">
+      <main className="grid grid-cols-1 gap-8 lg:gap-12 justify-items-center">
+        <h1 className="text-lg lg:text-xl uppercase tracking-widest text-center text-neutral-700 h-8 lg:h-12 flex items-center justify-center">
           Dinner Configurator 9000
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
           <CategoryCard
             title="Protein"
             selected={selectedProtein}
@@ -132,7 +132,7 @@ export default function Home() {
             isSpinningCarb ||
             isSpinningCuisine
           }
-          className={`h-12 w-72 old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3 ${
+          className={`h-8 lg:h-12 w-64 lg:w-72 old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3 ${
             isSpinning ||
             isSpinningProtein ||
             isSpinningCarb ||
@@ -161,7 +161,7 @@ export default function Home() {
               "_blank"
             );
           }}
-          className="h-12 w-48 cursor-pointer old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3"
+          className="h-8 lg:h-12 w-48 cursor-pointer old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3"
         >
           <MagnifyingGlassIcon className="w-4 h-4 inline-block mr-2" />
           Search Result
