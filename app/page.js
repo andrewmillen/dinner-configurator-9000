@@ -93,18 +93,17 @@ export default function Home() {
           Dinner Configurator 9000
         </h1>
 
-        <CategoryCard
-          title="Cuisine"
-          selected={selectedCuisine}
-          isSpinning={isSpinning}
-          isSpinningCategory={isSpinningCuisine}
-          onSpin={() =>
-            spinSingle(setIsSpinningCuisine, setSelectedCuisine, cuisines)
-          }
-          color="text-amber-600"
-        />
-
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+          <CategoryCard
+            title="Cuisine"
+            selected={selectedCuisine}
+            isSpinning={isSpinning}
+            isSpinningCategory={isSpinningCuisine}
+            onSpin={() =>
+              spinSingle(setIsSpinningCuisine, setSelectedCuisine, cuisines)
+            }
+            color="text-amber-600"
+          />
           <CategoryCard
             title="Protein"
             selected={selectedProtein}
