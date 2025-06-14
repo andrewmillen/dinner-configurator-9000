@@ -30,10 +30,12 @@ const cuisines = [
   "American",
   "Mexican",
   "Indian",
-  "Mediterranean",
+  "Greek",
   "Middle Eastern",
   "Irish",
-  "Asian",
+  "Japanese",
+  "Chinese",
+  "Korean",
   "Italian",
   "Cajun",
   "Creole",
@@ -91,6 +93,17 @@ export default function Home() {
           Dinner Configurator 9000
         </h1>
 
+        <CategoryCard
+          title="Cuisine"
+          selected={selectedCuisine}
+          isSpinning={isSpinning}
+          isSpinningCategory={isSpinningCuisine}
+          onSpin={() =>
+            spinSingle(setIsSpinningCuisine, setSelectedCuisine, cuisines)
+          }
+          color="text-amber-600"
+        />
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
           <CategoryCard
             title="Protein"
@@ -110,17 +123,6 @@ export default function Home() {
             isSpinningCategory={isSpinningCarb}
             onSpin={() => spinSingle(setIsSpinningCarb, setSelectedCarb, carbs)}
             color="text-lime-600"
-          />
-
-          <CategoryCard
-            title="Cuisine"
-            selected={selectedCuisine}
-            isSpinning={isSpinning}
-            isSpinningCategory={isSpinningCuisine}
-            onSpin={() =>
-              spinSingle(setIsSpinningCuisine, setSelectedCuisine, cuisines)
-            }
-            color="text-amber-600"
           />
         </div>
 
