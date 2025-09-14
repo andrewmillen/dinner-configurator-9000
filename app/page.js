@@ -167,7 +167,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
               <button
                 onClick={() => setIsConfigOpen(true)}
-                className="h-8 lg:h-12 w-64 lg:w-72 cursor-pointer old-button flex items-center justify-center uppercase tracking-wider text-sm"
+                className="h-8 lg:h-12 w-48 old-button flex items-center justify-center uppercase tracking-wider text-sm"
               >
                 <AdjustmentsHorizontalIcon className="w-4 h-4 inline-block mr-2" />
                 Configure
@@ -180,7 +180,7 @@ export default function Home() {
                   isSpinningCarb ||
                   isSpinningCuisine
                 }
-                className={`h-8 lg:h-12 w-64 lg:w-72 old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3 ${
+                className={`h-8 lg:h-12 w-48 old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3 ${
                   isSpinning ||
                   isSpinningProtein ||
                   isSpinningCarb ||
@@ -192,12 +192,12 @@ export default function Home() {
                 {isSpinning ? (
                   <>
                     <ArrowPathIcon className="w-4 h-4 inline-block mr-3 animate-spin" />
-                    Randomize
+                    Spin All
                   </>
                 ) : (
                   <>
                     <ArrowPathIcon className="w-4 h-4 inline-block mr-3" />
-                    Randomize
+                    Spin All
                   </>
                 )}
               </button>
@@ -211,10 +211,10 @@ export default function Home() {
                     "_blank"
                   );
                 }}
-                className="h-8 lg:h-12 w-64 lg:w-72 cursor-pointer old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3"
+                className="h-8 lg:h-12 w-48 old-button flex items-center justify-center uppercase tracking-wider text-sm space-x-3"
               >
                 <MagnifyingGlassIcon className="w-4 h-4 inline-block mr-2" />
-                Search Result
+                Search
               </button>
             </div>
           </main>
