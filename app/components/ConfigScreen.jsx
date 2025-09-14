@@ -60,7 +60,7 @@ export default function ConfigScreen({ onSave, onCancel, proteins, carbs, cuisin
   };
 
   return (
-    <div className="min-h-svh p-8 flex flex-col bg-neutral-400/60">
+    <div className="min-h-svh p-8 flex flex-col bg-neutral-300">
 
       <div className="flex-1 flex gap-20 items-center justify-center overflow-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -69,7 +69,7 @@ export default function ConfigScreen({ onSave, onCancel, proteins, carbs, cuisin
           { title: "Carbs", items: carbs, key: "carbs" },
           { title: "Cuisines", items: cuisines, key: "cuisines" },
         ].map(({ title, items, key }) => (
-          <div key={key} className="mb-8 border-2 bg-neutral-300 outline-1 border-neutral-400 border-l-neutral-200 border-t-neutral-200 outline-neutral-500 p-2 w-64 lg:w-72 h-128 overflow-y-scroll">
+          <div key={key} className="mb-8 border bg-neutral-200 border-neutral-600 p-2 w-64 lg:w-72 h-full max-h-[50vh] overflow-y-scroll">
               <h3 className="text-xs tracking-widest uppercase w-full text-center text-neutral-800 mt-2 mb-4">{title}</h3>
             <div className="w-full items-center mb-2">
                 <label className="h-12 w-full old-button flex items-center gap-2 p-2">
@@ -79,6 +79,8 @@ export default function ConfigScreen({ onSave, onCancel, proteins, carbs, cuisin
                   onChange={() => handleToggleAll(key, items)}
                   className="appearance-none size-4 border border-neutral-800 rounded-xs bg-neutral-300 checked:bg-neutral-800 focus:outline-none cursor-pointer peer"
                 />
+                                    <CheckIcon className="w-4 h-4 absolute hidden text-white peer-checked:block" />
+
                   <span className="text-sm text-neutral-500 peer-checked:text-neutral-800">All</span>
               </label>
             </div>
@@ -96,6 +98,7 @@ export default function ConfigScreen({ onSave, onCancel, proteins, carbs, cuisin
                       onChange={() => handleToggleItem(key, item)}
                       className={`appearance-none size-4 border border-neutral-800 rounded-xs bg-neutral-300 focus:outline-none cursor-pointer peer ${checkedBg}`}
                     />
+                    <CheckIcon className="w-4 h-4 absolute hidden text-white peer-checked:block" />
                     <span className="text-sm text-neutral-500 peer-checked:text-neutral-800">{item}</span>
                   </label>
                 );

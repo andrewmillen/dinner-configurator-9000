@@ -170,7 +170,7 @@ export default function Home() {
                 className="h-8 lg:h-12 w-48 old-button flex items-center justify-center uppercase tracking-wider text-sm"
               >
                 <AdjustmentsHorizontalIcon className="w-4 h-4 inline-block mr-2" />
-                Configure
+                Customize
               </button>
               <button
                 onClick={spin}
